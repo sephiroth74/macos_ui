@@ -16,10 +16,14 @@ class MacosTab extends StatelessWidget {
     super.key,
     required this.label,
     this.active = false,
+    this.labelStyle,
   });
 
   /// The display label for this tab.
   final String label;
+
+  // The style of the label.
+  final TextStyle? labelStyle;
 
   /// Whether this [MacosTab] is currently selected. Handled internally by
   /// [MacosSegmentedControl]'s build function.
@@ -43,7 +47,7 @@ class MacosTab extends StatelessWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-          child: Text(label),
+          child: Text(label, style: labelStyle),
         ),
       ),
     );
@@ -53,10 +57,12 @@ class MacosTab extends StatelessWidget {
   MacosTab copyWith({
     String? label,
     bool? active,
+    TextStyle? labelStyle,
   }) {
     return MacosTab(
       label: label ?? this.label,
       active: active ?? this.active,
+      labelStyle: labelStyle ?? this.labelStyle,
     );
   }
 }

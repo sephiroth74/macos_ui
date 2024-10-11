@@ -46,7 +46,7 @@ class _MacosSegmentedControlState extends State<MacosSegmentedControl> {
         // Background color
         color: brightness.resolve(
           const Color(0xFFE2E3E6),
-          const Color(0xFF2B2E33),
+          const Color(0xFF353433),
         ),
         boxShadow: [
           BoxShadow(
